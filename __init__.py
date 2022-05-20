@@ -95,8 +95,8 @@ def init(s):
     
     server = s
 
-    idev = dict(zip(*pm_get_input_devices()))['nanoKONTROL2 MIDI 1']
-    odev = dict(zip(*pm_get_output_devices()))['nanoKONTROL2 MIDI 1']
+    idev = dict(zip(*pm_get_input_devices()))['nanoKONTROL2 nanoKONTROL2 _ CTR']
+    odev = dict(zip(*pm_get_output_devices()))['nanoKONTROL2 nanoKONTROL2 _ CTR']
     server.setMidiInputDevice(idev)
     server.setMidiOutputDevice(odev)
 
