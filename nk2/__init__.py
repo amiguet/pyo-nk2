@@ -190,4 +190,4 @@ if __name__ == '__main__':
     tf1 = TrigFunc(Press('play'), start)
     tf2 = TrigFunc(Press('stop'), stop)
         
-    server.gui()
+    input('Running. Press <enter> to terminate.')
