@@ -89,14 +89,23 @@ for i in range(8):
 
 # Find device & other init's
 
+def find_device(devs_and_numbers, search='nanoKONTROL2'):
+
+    for dev, num in zip(*devs_and_numbers):
+        if dev.startswith(search):
+            return num
+
+    raise Exception('Could not find a nanoKONTROL :-(')
+    
+
 def init(s):
 
     global server
     
     server = s
 
-    idev = dict(zip(*pm_get_input_devices()))['nanoKONTROL2 nanoKONTROL2 _ CTR']
-    odev = dict(zip(*pm_get_output_devices()))['nanoKONTROL2 nanoKONTROL2 _ CTR']
+    idev = find_device(pm_get_input_devices())
+    odev = find_device(pm_get_output_devices())
     server.setMidiInputDevice(idev)
     server.setMidiOutputDevice(odev)
 
